@@ -1,37 +1,38 @@
-# Advanced Programming
+# Assignment 05: Todo List Application
 
-This repository contains solutions, projects, complexity analyses, and sample outputs developed as part of the **Advanced Programming** course.
+## Technology Used
 
-## Repository Structure
+- React
 
-Each assignment is organized in a separate folder and may contain:
+## Question
 
-- **Problem-Statement.pdf** – Assignment problem statement
-- **Source-Code/** – Source code files (C, Java, Python, etc.)
-- **Project Folder** – React or React Native project folder (e.g., `CourseDashboard`, `ToDo`)
-- **Documentation/** – Time and space complexity analysis documents (where applicable)
-- **Sample-Output/** – Screenshots, screen recordings, sample outputs, and release APKs (where applicable)
+Create a simple React component that maintains a list of todos using useState.
 
-## Assignment List
+Allow the user to add a todo and display all added todos on the screen.
 
-| Assignment | Title | Technology |
-|------------|--------|------------|
-| Assignment 01 | Time Complexity Analysis (Constant, Linear & Quadratic) | C |
-| Assignment 02 | Space Complexity Analysis | C |
-| Assignment 03 | Book Management using ArrayList | Java |
-| Assignment 04 | Product Inventory Management | Python |
-| Assignment 05 | Todo List Application | React |
-| Assignment 06 | Student Performance Analyzer | Java |
-| Assignment 07 | Activity Log Analyzer | Python |
-| Assignment 08 | Course Enrollment Dashboard | React |
-| Assignment 09 | Banking System using OOP Concepts | Java |
-| Assignment 10 | Student Management System with Composition | Python |
-| Assignment 11 | Library Management System using Abstraction & Polymorphism | Java |
-| Assignment 12 | E-Commerce Order Processing System (SOLID Principles) | Java |
-| Assignment 13 | Dynamic String Buffer Implementation | C |
-| Assignment 14 | Garbage Collection and Circular References | Python |
-| Assignment 15 | Multithreading with Mutex Synchronization | C |
-| Assignment 16 | Thread Synchronization using Condition Variables | C |
-| Assignment 17 | User Onboarding Validation Module with Testing | Python |
-| Assignment 18 | Score Processing Utility with Exception Handling & Testing | Python |
-| Assignment 19 | Digital Counter & Theme Toggle App | React Native |
+## Folder Structure
+
+```text
+Assignment5_CSB24008/
+├── ToDo/
+│   ├── FrontEnd/
+│   ├── public/
+│   └── src/
+└── Sample-Output/
+```
+
+## Contents
+
+- **ToDo/** – Contains the React project implementation of the Todo List application.
+- **FrontEnd/** – Contains the React application source code and project configuration files.
+- **public/** – Contains static assets used by the application.
+- **src/** – Contains React components, styling, and application logic.
+- **Sample-Output/** – Contains screenshots and execution outputs demonstrating the functionality of the Todo List application.
+
+## Notes
+
+- The implementation uses the React `useState` hook for state management.
+- Users can add new todo items through the interface.
+- All added todos are dynamically displayed on the screen.
+- The application demonstrates basic React component design and state handling.
+- Sample outputs are included for verification and demonstration purposes.
