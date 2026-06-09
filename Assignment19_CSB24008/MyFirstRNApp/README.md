@@ -1,12 +1,8 @@
 # MyFirstRNApp
 
-A React Native application developed as part of **Assignment 19** for the **Advanced Programming** course.
+A React Native application that functions as a digital counter with theme switching capabilities.
 
-## Assignment Overview
-
-Build a single-screen mobile application that functions as a digital counter with theme switching capabilities.
-
-### Features
+## Features
 
 - Increment counter value
 - Decrement counter value
@@ -33,13 +29,15 @@ MyFirstRNApp/
 └── ...
 ```
 
-## How to Run
+## Installation
 
-### Install Dependencies
+Install dependencies:
 
 ```bash
 npm install
 ```
+
+## Run the Application
 
 ### Start Metro
 
@@ -53,7 +51,7 @@ npm start
 npm run android
 ```
 
-## Assignment Requirements Implemented
+## Implementation Details
 
 - State management using `useState`
 - Counter increment, decrement, and reset functionality
@@ -61,7 +59,8 @@ npm run android
 - Dynamic theme toggling
 - Conditional styling for Light and Dark modes
 - Clean UI layout using Flexbox
+- Responsive user interface using React Native components
 
-## Sample Output
+## Output
 
-Screen recordings, and APK files are available in the `Sample-Output` directory of the assignment folder.
+Screen recordings and APK files are available in the `Sample-Output` directory of the assignment folder.
