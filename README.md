@@ -1,37 +1,73 @@
-# Advanced Programming
+# Assignment 09: Banking System using OOP Concepts
 
-This repository contains solutions, projects, complexity analyses, and sample outputs developed as part of the **Advanced Programming** course.
+## Technology Used
 
-## Repository Structure
+- Java
 
-Each assignment is organized in a separate folder and may contain:
+## Question
 
-- **Problem-Statement.pdf** – Assignment problem statement
-- **Source-Code/** – Source code files (C, Java, Python, etc.)
-- **Project Folder** – React or React Native project folder (e.g., `CourseDashboard`, `ToDo`)
-- **Documentation/** – Time and space complexity analysis documents (where applicable)
-- **Sample-Output/** – Screenshots, screen recordings, sample outputs, and release APKs (where applicable)
+Design a banking system in Java with:
 
-## Assignment List
+### Base Class: Account
 
-| Assignment | Title | Technology |
-|------------|--------|------------|
-| Assignment 01 | Time Complexity Analysis (Constant, Linear & Quadratic) | C |
-| Assignment 02 | Space Complexity Analysis | C |
-| Assignment 03 | Book Management using ArrayList | Java |
-| Assignment 04 | Product Inventory Management | Python |
-| Assignment 05 | Todo List Application | React |
-| Assignment 06 | Student Performance Analyzer | Java |
-| Assignment 07 | Activity Log Analyzer | Python |
-| Assignment 08 | Course Enrollment Dashboard | React |
-| Assignment 09 | Banking System using OOP Concepts | Java |
-| Assignment 10 | Student Management System with Composition | Python |
-| Assignment 11 | Library Management System using Abstraction & Polymorphism | Java |
-| Assignment 12 | E-Commerce Order Processing System (SOLID Principles) | Java |
-| Assignment 13 | Dynamic String Buffer Implementation | C |
-| Assignment 14 | Garbage Collection and Circular References | Python |
-| Assignment 15 | Multithreading with Mutex Synchronization | C |
-| Assignment 16 | Thread Synchronization using Condition Variables | C |
-| Assignment 17 | User Onboarding Validation Module with Testing | Python |
-| Assignment 18 | Score Processing Utility with Exception Handling & Testing | Python |
-| Assignment 19 | Digital Counter & Theme Toggle App | React Native |
+Create a base class `Account` containing the following private fields:
+
+- `accountNumber`
+- `ownerName`
+- `balance`
+
+The class should:
+
+- Provide getters and setters
+- Include at least two constructors using constructor chaining
+- Implement `deposit()` and `withdraw()` methods with proper validation
+- Include a `display()` method
+
+### Derived Classes
+
+#### SavingsAccount
+
+Extend the `Account` class by:
+
+- Adding an `interestRate` field
+- Overriding the `display()` method
+- Displaying interest-related information
+
+#### CurrentAccount
+
+Extend the `Account` class by:
+
+- Adding an `overdraftLimit` field
+- Restricting withdrawals according to the overdraft limit
+
+### Requirements
+
+Your implementation should clearly demonstrate:
+
+- Proper encapsulation (no direct field access)
+- Constructor overloading and constructor chaining using `this(...)`
+- Inheritance and method overriding using `@Override` and `super`
+- Polymorphism by storing objects in an `Account` reference list and calling `display()`
+- Basic validation and debugging using assertions or exceptions for invalid operations
+
+## Folder Structure
+
+```text
+Assignment9_CSB24008/
+├── Source-Code/
+└── Sample-Output/
+```
+
+## Contents
+
+- **Source-Code/** – Contains the Java implementation of the banking system using object-oriented programming concepts.
+- **Sample-Output/** – Contains execution outputs and screenshots demonstrating the functionality of the banking system.
+
+## Notes
+
+- The implementation demonstrates the core OOP principles of encapsulation, inheritance, polymorphism, and method overriding.
+- Constructor overloading and chaining are implemented using `this(...)`.
+- The `SavingsAccount` and `CurrentAccount` classes extend the base `Account` class with specialized functionality.
+- Validation is performed to ensure safe deposit and withdrawal operations.
+- Polymorphism is demonstrated through the use of `Account` references to handle different account types.
+- Sample outputs are included for verification and demonstration purposes.
