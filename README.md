@@ -1,37 +1,122 @@
-# Advanced Programming
+# Assignment 18: Score Processing Utility with Exception Handling and Testing
 
-This repository contains solutions, projects, complexity analyses, and sample outputs developed as part of the **Advanced Programming** course.
+## Technology Used
 
-## Repository Structure
+- Python
 
-Each assignment is organized in a separate folder and may contain:
+## Question
 
-- **Problem-Statement.pdf** – Assignment problem statement
-- **Source-Code/** – Source code files (C, Java, Python, etc.)
-- **Project Folder** – React or React Native project folder (e.g., `CourseDashboard`, `ToDo`)
-- **Documentation/** – Time and space complexity analysis documents (where applicable)
-- **Sample-Output/** – Screenshots, screen recordings, sample outputs, and release APKs (where applicable)
+Generally, handling external files is a common source of runtime errors. Files might be missing, or they might contain corrupted data. For this assignment, create a simple data utility class that reads an integer value from a text file, performs a calculation, and ensures all system resources are properly closed afterward—even if something goes wrong.
 
-## Assignment List
+### Requirements
 
-| Assignment | Title | Technology |
-|------------|--------|------------|
-| Assignment 01 | Time Complexity Analysis (Constant, Linear & Quadratic) | C |
-| Assignment 02 | Space Complexity Analysis | C |
-| Assignment 03 | Book Management using ArrayList | Java |
-| Assignment 04 | Product Inventory Management | Python |
-| Assignment 05 | Todo List Application | React |
-| Assignment 06 | Student Performance Analyzer | Java |
-| Assignment 07 | Activity Log Analyzer | Python |
-| Assignment 08 | Course Enrollment Dashboard | React |
-| Assignment 09 | Banking System using OOP Concepts | Java |
-| Assignment 10 | Student Management System with Composition | Python |
-| Assignment 11 | Library Management System using Abstraction & Polymorphism | Java |
-| Assignment 12 | E-Commerce Order Processing System (SOLID Principles) | Java |
-| Assignment 13 | Dynamic String Buffer Implementation | C |
-| Assignment 14 | Garbage Collection and Circular References | Python |
-| Assignment 15 | Multithreading with Mutex Synchronization | C |
-| Assignment 16 | Thread Synchronization using Condition Variables | C |
-| Assignment 17 | User Onboarding Validation Module with Testing | Python |
-| Assignment 18 | Score Processing Utility with Exception Handling & Testing | Python |
-| Assignment 19 | Digital Counter & Theme Toggle App | React Native |
+The program must:
+
+- Read a numeric score from a text file.
+- Multiply the score by 10.
+- Return the calculated result.
+- Handle missing files gracefully.
+- Handle invalid file contents gracefully when the file contains non-numeric data.
+- Ensure proper cleanup of resources regardless of success or failure.
+- Include automated tests to verify both successful and failure scenarios.
+
+### Implementation Rules
+
+#### ScoreProcessor Class
+
+Create a class:
+
+```python
+class ScoreProcessor
+```
+
+containing the method:
+
+```python
+def process_score_file(self, file_path: str) -> int
+```
+
+Requirements:
+
+- Use a `try-except-else-finally` structure.
+- Open and read data from a text file.
+- Convert the file content to an integer.
+- Multiply the value by 10 and return the result.
+
+#### Exception Handling
+
+Handle the following exceptions specifically:
+
+```python
+FileNotFoundError
+ValueError
+```
+
+Requirements:
+
+- Print a helpful error message when a file is missing.
+- Print a helpful error message when the file contains invalid data.
+- Use the `else` block to print:
+
+```text
+Data processed successfully
+```
+
+- Use the `finally` block to print:
+
+```text
+File cleanup completed
+```
+
+#### Unit Testing
+
+Create a pytest test suite that includes:
+
+- A test for successful score processing using a valid file.
+- A test that verifies handling of a missing file using `pytest.raises`.
+- Appropriate assertions for validating program behavior.
+
+### Required Concepts
+
+#### Exception Handling and Structure
+
+- Multi-exception handling
+- Proper use of `try`, `except`, `else`, and `finally`
+- Guaranteed execution of cleanup code
+
+#### Core Logic and Input Validation
+
+- File handling
+- Integer parsing
+- Validation of file contents
+- Score calculation
+
+#### Unit Testing
+
+- Automated testing using pytest
+- Validation of successful execution paths
+- Validation of error scenarios
+- Exception testing using `pytest.raises`
+
+## Folder Structure
+
+```text
+Assignment18_CSB24008/
+├── Source-Code/
+└── Sample-Output/
+```
+
+## Contents
+
+- **Source-Code/** – Contains the Python implementation of the `ScoreProcessor` class and the pytest test suite.
+- **Sample-Output/** – Contains execution outputs and screenshots demonstrating successful processing, exception handling, and test execution results.
+
+## Notes
+
+- The implementation uses Python file handling mechanisms to read data from external files.
+- Exception handling is implemented using `try-except-else-finally`.
+- Missing files and invalid data formats are handled gracefully through specific exception types.
+- Cleanup code is guaranteed to execute through the `finally` block.
+- Automated testing is implemented using the pytest framework.
+- Test cases validate both successful processing and error handling behavior.
+- Sample outputs are included for verification and demonstration purposes.
