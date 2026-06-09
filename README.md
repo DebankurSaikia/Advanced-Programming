@@ -1,37 +1,111 @@
-# Advanced Programming
+# Assignment 17: User Onboarding Validation Module with Testing
 
-This repository contains solutions, projects, complexity analyses, and sample outputs developed as part of the **Advanced Programming** course.
+## Technology Used
 
-## Repository Structure
+- Python
 
-Each assignment is organized in a separate folder and may contain:
+## Question
 
-- **Problem-Statement.pdf** – Assignment problem statement
-- **Source-Code/** – Source code files (C, Java, Python, etc.)
-- **Project Folder** – React or React Native project folder (e.g., `CourseDashboard`, `ToDo`)
-- **Documentation/** – Time and space complexity analysis documents (where applicable)
-- **Sample-Output/** – Screenshots, screen recordings, sample outputs, and release APKs (where applicable)
+Build a user onboarding validation module for a platform. Your objective is to create a core validation class that processes incoming application data—specifically a user's email address and age—and enforces strict business constraints before allowing a registration to complete.
 
-## Assignment List
+### Requirements
 
-| Assignment | Title | Technology |
-|------------|--------|------------|
-| Assignment 01 | Time Complexity Analysis (Constant, Linear & Quadratic) | C |
-| Assignment 02 | Space Complexity Analysis | C |
-| Assignment 03 | Book Management using ArrayList | Java |
-| Assignment 04 | Product Inventory Management | Python |
-| Assignment 05 | Todo List Application | React |
-| Assignment 06 | Student Performance Analyzer | Java |
-| Assignment 07 | Activity Log Analyzer | Python |
-| Assignment 08 | Course Enrollment Dashboard | React |
-| Assignment 09 | Banking System using OOP Concepts | Java |
-| Assignment 10 | Student Management System with Composition | Python |
-| Assignment 11 | Library Management System using Abstraction & Polymorphism | Java |
-| Assignment 12 | E-Commerce Order Processing System (SOLID Principles) | Java |
-| Assignment 13 | Dynamic String Buffer Implementation | C |
-| Assignment 14 | Garbage Collection and Circular References | Python |
-| Assignment 15 | Multithreading with Mutex Synchronization | C |
-| Assignment 16 | Thread Synchronization using Condition Variables | C |
-| Assignment 17 | User Onboarding Validation Module with Testing | Python |
-| Assignment 18 | Score Processing Utility with Exception Handling & Testing | Python |
-| Assignment 19 | Digital Counter & Theme Toggle App | React Native |
+The system must ensure that:
+
+- The email string is neither null nor empty.
+- The email conforms to a valid email format using regular expressions.
+- The email contains a valid identifier, an `@` symbol, and a domain name.
+- Applicants must be at least 18 years old to create an account.
+
+### Implementation Rules
+
+#### Custom Exceptions
+
+Implement the following custom exceptions:
+
+```python
+class InvalidEmailError(...)
+class UnderageError(...)
+```
+
+Requirements:
+
+- `InvalidEmailError` should inherit from an appropriate built-in exception class.
+- `UnderageError` should inherit from an appropriate built-in exception class.
+- Exceptions should provide descriptive and dynamic error messages.
+
+#### Registration Service
+
+Create a class:
+
+```python
+class RegistrationService
+```
+
+containing the method:
+
+```python
+def register_user(self, email: str, age: int) -> bool
+```
+
+Requirements:
+
+- Validate email format using regular expressions.
+- Validate the minimum age requirement.
+- Use an internal `assert` statement to verify basic state invariants.
+- Raise the appropriate custom exception when validation fails.
+
+#### Unit Testing
+
+Write a pytest test suite that:
+
+- Uses a shared `@pytest.fixture`
+- Validates successful registration workflows
+- Uses `pytest.raises` to verify exception handling
+- Tests invalid email scenarios
+- Tests underage registration scenarios
+
+### Required Concepts
+
+#### Custom Exception Design
+
+- Appropriate exception inheritance
+- Descriptive exception messages
+
+#### Core Service Validation
+
+- Regex-based email validation
+- Age boundary checks
+- Assertion-based invariant validation
+- Proper exception triggering
+
+#### Unit Testing Suite
+
+- Shared fixtures
+- Automated validation tests
+- Exception testing using `pytest.raises`
+- Comprehensive test coverage
+
+## Folder Structure
+
+```text
+Assignment17_CSB24008/
+├── Source-Code/
+└── Sample-Output/
+```
+
+## Contents
+
+- **Source-Code/** – Contains the Python implementation of the user onboarding validation module, custom exceptions, and pytest test suite.
+- **Sample-Output/** – Contains execution outputs and screenshots demonstrating validation behavior and test execution results.
+
+## Notes
+
+- The implementation uses custom exceptions to handle invalid email and underage registration scenarios.
+- Email validation is performed using regular expressions.
+- Age restrictions are enforced through business rule validation.
+- Assertions are used to verify internal state invariants.
+- Automated testing is implemented using the pytest framework.
+- Test cases cover both successful and failure scenarios.
+- Exception handling is verified using `pytest.raises`.
+- Sample outputs are included for verification and demonstration purposes.
