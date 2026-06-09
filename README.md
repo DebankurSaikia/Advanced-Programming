@@ -1,37 +1,61 @@
-# Advanced Programming
+# Assignment 15: Multithreading with Mutex Synchronization
 
-This repository contains solutions, projects, complexity analyses, and sample outputs developed as part of the **Advanced Programming** course.
+## Technology Used
 
-## Repository Structure
+- C
 
-Each assignment is organized in a separate folder and may contain:
+## Question
 
-- **Problem-Statement.pdf** – Assignment problem statement
-- **Source-Code/** – Source code files (C, Java, Python, etc.)
-- **Project Folder** – React or React Native project folder (e.g., `CourseDashboard`, `ToDo`)
-- **Documentation/** – Time and space complexity analysis documents (where applicable)
-- **Sample-Output/** – Screenshots, screen recordings, sample outputs, and release APKs (where applicable)
+Write a multithreaded C program using POSIX threads (`pthread`) where multiple threads increment a shared global counter variable many times.
 
-## Assignment List
+### Tasks
 
-| Assignment | Title | Technology |
-|------------|--------|------------|
-| Assignment 01 | Time Complexity Analysis (Constant, Linear & Quadratic) | C |
-| Assignment 02 | Space Complexity Analysis | C |
-| Assignment 03 | Book Management using ArrayList | Java |
-| Assignment 04 | Product Inventory Management | Python |
-| Assignment 05 | Todo List Application | React |
-| Assignment 06 | Student Performance Analyzer | Java |
-| Assignment 07 | Activity Log Analyzer | Python |
-| Assignment 08 | Course Enrollment Dashboard | React |
-| Assignment 09 | Banking System using OOP Concepts | Java |
-| Assignment 10 | Student Management System with Composition | Python |
-| Assignment 11 | Library Management System using Abstraction & Polymorphism | Java |
-| Assignment 12 | E-Commerce Order Processing System (SOLID Principles) | Java |
-| Assignment 13 | Dynamic String Buffer Implementation | C |
-| Assignment 14 | Garbage Collection and Circular References | Python |
-| Assignment 15 | Multithreading with Mutex Synchronization | C |
-| Assignment 16 | Thread Synchronization using Condition Variables | C |
-| Assignment 17 | User Onboarding Validation Module with Testing | Python |
-| Assignment 18 | Score Processing Utility with Exception Handling & Testing | Python |
-| Assignment 19 | Digital Counter & Theme Toggle App | React Native |
+#### Phase 1: Without Synchronization
+
+Implement the program without any synchronization mechanism and observe the incorrect output caused by a race condition.
+
+#### Phase 2: With Mutex Synchronization
+
+Modify the program using a mutex (`pthread_mutex_t`) to protect the critical section and produce the correct final counter value.
+
+### Requirements
+
+Your program must demonstrate:
+
+- Thread creation using `pthread_create()`
+- Synchronization using:
+  - `pthread_mutex_lock()`
+  - `pthread_mutex_unlock()`
+- Thread completion using `pthread_join()`
+
+### Explanation
+
+Briefly explain:
+
+- Why the race condition occurs in the unsynchronized version
+- How the mutex protects the critical section and ensures the correct final counter value
+
+## Folder Structure
+
+```text
+Assignment15_CSB24008/
+├── Source-Code/
+├── Documentation/
+└── Sample-Output/
+```
+
+## Contents
+
+- **Source-Code/** – Contains the C implementation demonstrating multithreading with and without mutex synchronization.
+- **Documentation/** – Contains an explanation of race conditions, mutex synchronization, and how mutexes ensure correct access to shared resources.
+- **Sample-Output/** – Contains execution outputs and screenshots showing the effects of race conditions and mutex protection.
+
+## Notes
+
+- The implementation uses POSIX threads (`pthread`) to create and manage multiple threads.
+- A shared global counter variable is accessed concurrently by multiple threads.
+- The unsynchronized version demonstrates incorrect results caused by race conditions.
+- The synchronized version uses a mutex to protect the critical section and ensure data consistency.
+- Thread lifecycle management is performed using `pthread_create()` and `pthread_join()`.
+- The accompanying documentation explains why race conditions occur and how mutex synchronization resolves them.
+- Sample outputs are included for verification and demonstration purposes.
