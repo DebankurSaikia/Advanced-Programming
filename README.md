@@ -42,6 +42,6 @@ Each assignment branch contains:
 Depending on the assignment, the assignment folder may contain:
 
 - **Source-Code/** – Source code files (C, Java, Python, etc.).
-- **Project Folder** – React or React Native project files (e.g., Todo Application, Course Enrollment Dashboard, Digital Counter App).
-- **Documentation/** – Time and space complexity analysis documents (where applicable).
-- **Sample-Output/** – Screenshots, screen recordings, sample outputs, execution results, and release APKs (where applicable).
+- **Project Folder** – React or React Native project files (e.g., `ToDo`, `CourseEnrollment`, `MyFirstRNApp`).
+- **Documentation/** – Complexity analyses, synchronization explanations, or other assignment-related supporting documents (where applicable).
+- **Sample-Output/** – Screenshots, screen recordings, and release APK files (where applicable).
