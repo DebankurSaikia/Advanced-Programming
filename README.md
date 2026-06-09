@@ -1,37 +1,83 @@
-# Advanced Programming
+# Assignment 08: Course Enrollment Dashboard
 
-This repository contains solutions, projects, complexity analyses, and sample outputs developed as part of the **Advanced Programming** course.
+## Technology Used
 
-## Repository Structure
+- React
 
-Each assignment is organized in a separate folder and may contain:
+## Question
 
-- **Problem-Statement.pdf** – Assignment problem statement
-- **Source-Code/** – Source code files (C, Java, Python, etc.)
-- **Project Folder** – React or React Native project folder (e.g., `CourseDashboard`, `ToDo`)
-- **Documentation/** – Time and space complexity analysis documents (where applicable)
-- **Sample-Output/** – Screenshots, screen recordings, sample outputs, and release APKs (where applicable)
+Develop a Course Enrollment Dashboard in ReactJS.
 
-## Assignment List
+You are building a React component that displays enrolled students.
 
-| Assignment | Title | Technology |
-|------------|--------|------------|
-| Assignment 01 | Time Complexity Analysis (Constant, Linear & Quadratic) | C |
-| Assignment 02 | Space Complexity Analysis | C |
-| Assignment 03 | Book Management using ArrayList | Java |
-| Assignment 04 | Product Inventory Management | Python |
-| Assignment 05 | Todo List Application | React |
-| Assignment 06 | Student Performance Analyzer | Java |
-| Assignment 07 | Activity Log Analyzer | Python |
-| Assignment 08 | Course Enrollment Dashboard | React |
-| Assignment 09 | Banking System using OOP Concepts | Java |
-| Assignment 10 | Student Management System with Composition | Python |
-| Assignment 11 | Library Management System using Abstraction & Polymorphism | Java |
-| Assignment 12 | E-Commerce Order Processing System (SOLID Principles) | Java |
-| Assignment 13 | Dynamic String Buffer Implementation | C |
-| Assignment 14 | Garbage Collection and Circular References | Python |
-| Assignment 15 | Multithreading with Mutex Synchronization | C |
-| Assignment 16 | Thread Synchronization using Condition Variables | C |
-| Assignment 17 | User Onboarding Validation Module with Testing | Python |
-| Assignment 18 | Score Processing Utility with Exception Handling & Testing | Python |
-| Assignment 19 | Digital Counter & Theme Toggle App | React Native |
+Each student:
+
+```javascript
+{
+  id: number,
+  name: string,
+  enrolledCourses: Set<string>,
+  gpa: number
+}
+```
+
+### Tasks
+
+1. Maintain students in state.
+
+2. Implement the following features:
+
+a. Add a new student  
+b. Remove a student by ID  
+c. Display students sorted by GPA (descending)  
+d. Display all unique courses across students  
+e. Filter students enrolled in a specific course
+
+### Requirements
+
+Use the following:
+
+a. `useState` for state management  
+b. `Map` internally for ID-to-student mapping  
+c. `Set` for course uniqueness  
+d. `map()`, `filter()`, and `reduce()`  
+e. Do not mutate state directly  
+f. Use the spread operator for state updates  
+g. Convert `Set` to an array before rendering
+
+### Complexity Analysis
+
+Compute the time complexity of filtering students by course.
+
+## Folder Structure
+
+```text
+Assignment8_CSB24008/
+├── CourseEnrollment/
+│   ├── coursedashboard/
+│   │   ├── public/
+│   │   ├── src/
+│   │   └── ...
+├── Documentation/
+└── Sample-Output/
+```
+
+## Contents
+
+- **CourseEnrollment/** – Contains the React project implementation of the Course Enrollment Dashboard.
+- **coursedashboard/** – Contains the React application source code and project configuration files.
+- **public/** – Contains static assets used by the application.
+- **src/** – Contains React components, styling, and application logic.
+- **Documentation/** – Contains the complexity analysis and supporting explanations.
+- **Sample-Output/** – Contains screenshots and execution outputs demonstrating the functionality of the dashboard.
+
+## Notes
+
+- The implementation uses React's `useState` hook for state management.
+- Student records are managed using appropriate JavaScript data structures such as `Map` and `Set`.
+- The dashboard supports adding and removing students dynamically.
+- Students are displayed in descending order of GPA.
+- Unique enrolled courses are extracted and displayed using a `Set`.
+- Filtering functionality is provided to display students enrolled in a specific course.
+- Complexity analysis for course-based filtering is included in the documentation.
+- Sample outputs are included for verification and demonstration purposes.
