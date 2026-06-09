@@ -1,37 +1,87 @@
-# Advanced Programming
+# Assignment 14: Garbage Collection and Circular References
 
-This repository contains solutions, projects, complexity analyses, and sample outputs developed as part of the **Advanced Programming** course.
+## Technology Used
 
-## Repository Structure
+- Python
 
-Each assignment is organized in a separate folder and may contain:
+## Question
 
-- **Problem-Statement.pdf** – Assignment problem statement
-- **Source-Code/** – Source code files (C, Java, Python, etc.)
-- **Project Folder** – React or React Native project folder (e.g., `CourseDashboard`, `ToDo`)
-- **Documentation/** – Time and space complexity analysis documents (where applicable)
-- **Sample-Output/** – Screenshots, screen recordings, sample outputs, and release APKs (where applicable)
+Create a scenario where objects are "dead" but still have a reference count higher than zero, then force the Garbage Collector to clean them up.
 
-## Assignment List
+### Implementation Steps
 
-| Assignment | Title | Technology |
-|------------|--------|------------|
-| Assignment 01 | Time Complexity Analysis (Constant, Linear & Quadratic) | C |
-| Assignment 02 | Space Complexity Analysis | C |
-| Assignment 03 | Book Management using ArrayList | Java |
-| Assignment 04 | Product Inventory Management | Python |
-| Assignment 05 | Todo List Application | React |
-| Assignment 06 | Student Performance Analyzer | Java |
-| Assignment 07 | Activity Log Analyzer | Python |
-| Assignment 08 | Course Enrollment Dashboard | React |
-| Assignment 09 | Banking System using OOP Concepts | Java |
-| Assignment 10 | Student Management System with Composition | Python |
-| Assignment 11 | Library Management System using Abstraction & Polymorphism | Java |
-| Assignment 12 | E-Commerce Order Processing System (SOLID Principles) | Java |
-| Assignment 13 | Dynamic String Buffer Implementation | C |
-| Assignment 14 | Garbage Collection and Circular References | Python |
-| Assignment 15 | Multithreading with Mutex Synchronization | C |
-| Assignment 16 | Thread Synchronization using Condition Variables | C |
-| Assignment 17 | User Onboarding Validation Module with Testing | Python |
-| Assignment 18 | Score Processing Utility with Exception Handling & Testing | Python |
-| Assignment 19 | Digital Counter & Theme Toggle App | React Native |
+#### 1. Create a Node Class
+
+Create a `Node` class containing:
+
+- `name`
+- `link`
+
+#### 2. Create a Reference Cycle
+
+Instantiate two objects:
+
+- Node A
+- Node B
+
+Create a circular reference:
+
+```python
+A.link = B
+B.link = A
+```
+
+#### 3. Check Reference Counts
+
+Use:
+
+```python
+sys.getrefcount()
+```
+
+to demonstrate that both objects have multiple references.
+
+#### 4. The Deletion
+
+Delete the direct references:
+
+```python
+del A
+del B
+```
+
+#### 5. The Investigation
+
+Use the `gc` module to demonstrate that the objects still exist in memory because of the circular reference, even though they are no longer accessible directly from the program.
+
+#### 6. The Cleanup
+
+Force garbage collection using:
+
+```python
+gc.collect()
+```
+
+Print the number of unreachable objects collected by the garbage collector.
+
+## Folder Structure
+
+```text
+Assignment14_CSB24008/
+├── Source-Code/
+└── Sample-Output/
+```
+
+## Contents
+
+- **Source-Code/** – Contains the Python implementation demonstrating garbage collection and circular references.
+- **Sample-Output/** – Contains execution outputs and screenshots demonstrating reference counts, circular references, and garbage collection.
+
+## Notes
+
+- The implementation demonstrates how circular references can prevent immediate object cleanup despite the removal of direct references.
+- Reference counts are inspected using `sys.getrefcount()`.
+- The `gc` module is used to investigate and collect unreachable objects.
+- The program illustrates the difference between reference counting and Python's cyclic garbage collection mechanism.
+- Garbage collection is explicitly triggered using `gc.collect()`.
+- Sample outputs are included for verification and demonstration purposes.
