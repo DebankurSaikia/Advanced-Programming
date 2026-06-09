@@ -1,10 +1,6 @@
 # Todo List Application
 
-A React application developed as part of **Assignment 05** for the **Advanced Programming** course.
-
-## Assignment Overview
-
-Create a simple React component that maintains a list of todos using React state management.
+A simple React application that allows users to create and manage a list of todos.
 
 ## Features
 
