@@ -1,37 +1,89 @@
-# Advanced Programming
+# Assignment 13: Dynamic String Buffer Implementation
 
-This repository contains solutions, projects, complexity analyses, and sample outputs developed as part of the **Advanced Programming** course.
+## Technology Used
 
-## Repository Structure
+- C
 
-Each assignment is organized in a separate folder and may contain:
+## Question
 
-- **Problem-Statement.pdf** – Assignment problem statement
-- **Source-Code/** – Source code files (C, Java, Python, etc.)
-- **Project Folder** – React or React Native project folder (e.g., `CourseDashboard`, `ToDo`)
-- **Documentation/** – Time and space complexity analysis documents (where applicable)
-- **Sample-Output/** – Screenshots, screen recordings, sample outputs, and release APKs (where applicable)
+In C, managing strings is a common source of buffer overflows and memory leaks. Implement a Dynamic String Buffer that automatically grows as needed.
 
-## Assignment List
+### Requirements
 
-| Assignment | Title | Technology |
-|------------|--------|------------|
-| Assignment 01 | Time Complexity Analysis (Constant, Linear & Quadratic) | C |
-| Assignment 02 | Space Complexity Analysis | C |
-| Assignment 03 | Book Management using ArrayList | Java |
-| Assignment 04 | Product Inventory Management | Python |
-| Assignment 05 | Todo List Application | React |
-| Assignment 06 | Student Performance Analyzer | Java |
-| Assignment 07 | Activity Log Analyzer | Python |
-| Assignment 08 | Course Enrollment Dashboard | React |
-| Assignment 09 | Banking System using OOP Concepts | Java |
-| Assignment 10 | Student Management System with Composition | Python |
-| Assignment 11 | Library Management System using Abstraction & Polymorphism | Java |
-| Assignment 12 | E-Commerce Order Processing System (SOLID Principles) | Java |
-| Assignment 13 | Dynamic String Buffer Implementation | C |
-| Assignment 14 | Garbage Collection and Circular References | Python |
-| Assignment 15 | Multithreading with Mutex Synchronization | C |
-| Assignment 16 | Thread Synchronization using Condition Variables | C |
-| Assignment 17 | User Onboarding Validation Module with Testing | Python |
-| Assignment 18 | Score Processing Utility with Exception Handling & Testing | Python |
-| Assignment 19 | Digital Counter & Theme Toggle App | React Native |
+#### 1. Create a StringBuffer Structure
+
+Create a `StringBuffer` structure containing:
+
+- `char *data`
+- `size_t length`
+- `size_t capacity`
+
+#### 2. Implement Initialization Function
+
+Write a function:
+
+```c
+sb_init(size_t initial_capacity)
+```
+
+Requirements:
+
+- Allocate both the structure and the internal data buffer on the heap.
+- Handle `NULL` returns from `malloc()` appropriately.
+
+#### 3. Implement Append Function
+
+Write a function:
+
+```c
+sb_append(StringBuffer *sb, const char *str)
+```
+
+#### 4. Dynamic Buffer Growth
+
+If the appended string exceeds the current capacity:
+
+- Use `realloc()` to increase the buffer size.
+- Double the current capacity when resizing.
+- Handle `realloc()` safely by ensuring the original pointer is not overwritten if `realloc()` returns `NULL`.
+
+#### 5. Implement Destructor Function
+
+Write a function:
+
+```c
+sb_free(StringBuffer *sb)
+```
+
+Requirements:
+
+- Free the internal data buffer.
+- Free the `StringBuffer` structure itself.
+- Prevent memory leaks by releasing all allocated memory.
+
+### Demonstration
+
+- Demonstrate the buffer growing at least twice during execution.
+- Properly free all allocated memory before program termination.
+
+## Folder Structure
+
+```text
+Assignment13_CSB24008/
+├── Source-Code/
+└── Sample-Output/
+```
+
+## Contents
+
+- **Source-Code/** – Contains the C implementation of the Dynamic String Buffer.
+- **Sample-Output/** – Contains execution outputs and screenshots demonstrating buffer growth and memory management.
+
+## Notes
+
+- The implementation demonstrates dynamic memory allocation using `malloc()` and `realloc()`.
+- Buffer resizing is performed automatically when additional capacity is required.
+- Safe handling of allocation failures is implemented to prevent data loss and undefined behavior.
+- Memory cleanup is performed using a dedicated destructor function to avoid memory leaks.
+- The program demonstrates dynamic buffer growth multiple times during execution.
+- Sample outputs are included for verification and demonstration purposes.
