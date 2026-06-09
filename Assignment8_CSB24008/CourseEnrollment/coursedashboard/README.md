@@ -1,10 +1,6 @@
 # Course Enrollment Dashboard
 
-A React application developed as part of **Assignment 08** for the **Advanced Programming** course.
-
-## Assignment Overview
-
-Develop a course enrollment dashboard that manages student records and course enrollments using React state management and modern JavaScript data structures.
+A React application for managing student records and course enrollments using React state management and modern JavaScript data structures.
 
 ## Features
 
@@ -35,21 +31,23 @@ CourseEnrollment/
     └── ...
 ```
 
-## How to Run
+## Installation
 
-### Install Dependencies
+Install dependencies:
 
 ```bash
 npm install
 ```
 
-### Start Development Server
+## Run the Application
+
+Start the development server:
 
 ```bash
 npm run dev
 ```
 
-## Assignment Requirements Implemented
+## Implementation Details
 
 - State management using `useState`
 - Student data management
@@ -61,6 +59,6 @@ npm run dev
 - Use of `map`, `filter`, and `reduce`
 - Immutable state updates using the spread operator
 
-## Sample Output
+## Output
 
 Screenshots of the application output are available in the `Sample-Output` directory of the assignment folder.
