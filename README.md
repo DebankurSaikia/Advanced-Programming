@@ -1,37 +1,67 @@
-# Advanced Programming
+# Assignment 11: Library Management System using Abstraction and Polymorphism
 
-This repository contains solutions, projects, complexity analyses, and sample outputs developed as part of the **Advanced Programming** course.
+## Technology Used
 
-## Repository Structure
+- Java
 
-Each assignment is organized in a separate folder and may contain:
+## Question
 
-- **Problem-Statement.pdf** – Assignment problem statement
-- **Source-Code/** – Source code files (C, Java, Python, etc.)
-- **Project Folder** – React or React Native project folder (e.g., `CourseDashboard`, `ToDo`)
-- **Documentation/** – Time and space complexity analysis documents (where applicable)
-- **Sample-Output/** – Screenshots, screen recordings, sample outputs, and release APKs (where applicable)
+Design a library system in Java with:
 
-## Assignment List
+### Base/Abstract Class
 
-| Assignment | Title | Technology |
-|------------|--------|------------|
-| Assignment 01 | Time Complexity Analysis (Constant, Linear & Quadratic) | C |
-| Assignment 02 | Space Complexity Analysis | C |
-| Assignment 03 | Book Management using ArrayList | Java |
-| Assignment 04 | Product Inventory Management | Python |
-| Assignment 05 | Todo List Application | React |
-| Assignment 06 | Student Performance Analyzer | Java |
-| Assignment 07 | Activity Log Analyzer | Python |
-| Assignment 08 | Course Enrollment Dashboard | React |
-| Assignment 09 | Banking System using OOP Concepts | Java |
-| Assignment 10 | Student Management System with Composition | Python |
-| Assignment 11 | Library Management System using Abstraction & Polymorphism | Java |
-| Assignment 12 | E-Commerce Order Processing System (SOLID Principles) | Java |
-| Assignment 13 | Dynamic String Buffer Implementation | C |
-| Assignment 14 | Garbage Collection and Circular References | Python |
-| Assignment 15 | Multithreading with Mutex Synchronization | C |
-| Assignment 16 | Thread Synchronization using Condition Variables | C |
-| Assignment 17 | User Onboarding Validation Module with Testing | Python |
-| Assignment 18 | Score Processing Utility with Exception Handling & Testing | Python |
-| Assignment 19 | Digital Counter & Theme Toggle App | React Native |
+Create a base/abstract class `LibraryItem` containing:
+
+- Common fields such as:
+  - `title`
+  - `year`
+- An abstract/common method:
+  - `displayInfo()`
+
+### Subclasses
+
+#### Book
+
+Extend `LibraryItem` by adding:
+
+- `author`
+
+#### DVD
+
+Extend `LibraryItem` by adding:
+
+- `duration`
+- `genre`
+
+### Requirements
+
+Your implementation should clearly demonstrate:
+
+- Use of abstraction through a common structure in the base class
+- Method overriding in subclasses
+- Polymorphism using a collection of `LibraryItem` objects
+- One additional feature:
+  - Constructor overloading OR
+  - Class/static counter
+
+## Folder Structure
+
+```text
+Assignment11_CSB24008/
+├── Source-Code/
+└── Sample-Output/
+```
+
+## Contents
+
+- **Source-Code/** – Contains the Java implementation of the library management system using abstraction, inheritance, and polymorphism.
+- **Sample-Output/** – Contains execution outputs and screenshots demonstrating the functionality of the system.
+
+## Notes
+
+- The implementation uses an abstract base class `LibraryItem` to define common properties and behavior.
+- The `Book` and `DVD` classes extend the base class and provide their own implementations of `displayInfo()`.
+- Polymorphism is demonstrated through the use of a collection of `LibraryItem` references containing different item types.
+- Constructor overloading is used to provide flexible object initialization.
+- The program demonstrates key object-oriented programming concepts including abstraction, inheritance, method overriding, and polymorphism.
+- Sample outputs are included for verification and demonstration purposes.
