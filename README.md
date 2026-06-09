@@ -1,37 +1,136 @@
-# Advanced Programming
+# Assignment 19: Digital Counter & Theme Toggle App
 
-This repository contains solutions, projects, complexity analyses, and sample outputs developed as part of the **Advanced Programming** course.
+## Technology Used
 
-## Repository Structure
+- React Native
 
-Each assignment is organized in a separate folder and may contain:
+## Question
 
-- **Problem-Statement.pdf** – Assignment problem statement
-- **Source-Code/** – Source code files (C, Java, Python, etc.)
-- **Project Folder** – React or React Native project folder (e.g., `CourseDashboard`, `ToDo`)
-- **Documentation/** – Time and space complexity analysis documents (where applicable)
-- **Sample-Output/** – Screenshots, screen recordings, sample outputs, and release APKs (where applicable)
+Build a single-screen mobile application using React Native. The app functions as a digital counter that allows users to increment, decrement, and reset a number displayed on the screen. To make the app more interactive, it must also include a Theme Toggle button that switches the screen's background and text colors between a Light Mode and a Dark Mode.
 
-## Assignment List
+This assignment focuses on setting up a basic React Native environment, creating clean layouts using Flexbox, and managing UI changes dynamically using React state management.
 
-| Assignment | Title | Technology |
-|------------|--------|------------|
-| Assignment 01 | Time Complexity Analysis (Constant, Linear & Quadratic) | C |
-| Assignment 02 | Space Complexity Analysis | C |
-| Assignment 03 | Book Management using ArrayList | Java |
-| Assignment 04 | Product Inventory Management | Python |
-| Assignment 05 | Todo List Application | React |
-| Assignment 06 | Student Performance Analyzer | Java |
-| Assignment 07 | Activity Log Analyzer | Python |
-| Assignment 08 | Course Enrollment Dashboard | React |
-| Assignment 09 | Banking System using OOP Concepts | Java |
-| Assignment 10 | Student Management System with Composition | Python |
-| Assignment 11 | Library Management System using Abstraction & Polymorphism | Java |
-| Assignment 12 | E-Commerce Order Processing System (SOLID Principles) | Java |
-| Assignment 13 | Dynamic String Buffer Implementation | C |
-| Assignment 14 | Garbage Collection and Circular References | Python |
-| Assignment 15 | Multithreading with Mutex Synchronization | C |
-| Assignment 16 | Thread Synchronization using Condition Variables | C |
-| Assignment 17 | User Onboarding Validation Module with Testing | Python |
-| Assignment 18 | Score Processing Utility with Exception Handling & Testing | Python |
-| Assignment 19 | Digital Counter & Theme Toggle App | React Native |
+### Implementation Rules
+
+#### Core Layout
+
+The application must use standard React Native components:
+
+- `View`
+- `Text`
+- `TouchableOpacity` (or `Button`)
+
+Requirements:
+
+- The counter UI should be centered on the screen.
+- Use Flexbox for layout management.
+
+#### State Management
+
+Use the `useState` hook to manage:
+
+- The current counter value (`integer`)
+- The active theme mode (`boolean` or `string`)
+
+#### Counter Logic
+
+The application should:
+
+- Start the counter at `0`
+- Increment the counter by `1`
+- Decrement the counter by `1`
+- Reset the counter to `0`
+
+Constraint:
+
+- The counter must never become negative.
+- Clicking Decrement at `0` should have no effect.
+
+#### Dynamic Styling
+
+##### Light Mode (Default)
+
+- White background
+- Dark text
+
+##### Dark Mode
+
+- Dark background
+- Light text
+
+Requirements:
+
+- Clicking the Theme Toggle button should instantly switch between themes.
+- Use conditional styling or ternary operators to update the UI dynamically.
+
+### Required Features
+
+#### 1. UI Layout and Component Structure
+
+- Parent container layout
+- Counter display using `Text`
+- Button arrangement using Flexbox
+- Proper use of:
+  - `flex`
+  - `justifyContent`
+  - `alignItems`
+  - `fontSize`
+  - `padding`
+
+#### 2. Counter State and Validation Logic
+
+- State management using `useState`
+- Increment, decrement, and reset functionality
+- Validation to prevent negative counter values
+
+#### 3. Dynamic Theme Toggling
+
+- Theme state tracking
+- Conditional styling based on the selected theme
+- Dynamic updates of background and text colors
+
+#### 4. Code Cleanliness and Best Practices
+
+- Well-organized code structure
+- Meaningful variable and function names
+- Readable styling and component organization
+- Stable runtime behavior without crashes
+
+### Execution Requirement
+
+- Android users should run the application on a physical Android device in development mode.
+- iPhone users may run the application using an Android Studio emulator.
+
+## Folder Structure
+
+```text
+Assignment19_CSB24008/
+├── MyFirstRNApp/
+│   ├── android/
+│   ├── ios/
+│   ├── __tests__/
+│   ├── App.tsx
+│   ├── package.json
+│   ├── README.md
+│   └── ...
+└── Sample-Output/
+```
+
+## Contents
+
+- **MyFirstRNApp/** – Contains the React Native project implementation of the Digital Counter & Theme Toggle App.
+- **android/** – Android-specific source code, build configuration, and project files.
+- **ios/** – iOS-specific source code and configuration files.
+- **__tests__/** – Contains test files for the React Native application.
+- **App.tsx** – Main application component containing the counter and theme toggle logic.
+- **Sample-Output/** – Contains screen recording of the application, and the release APK demonstrating the application functionality.
+
+## Notes
+
+- The implementation uses React Native and the `useState` hook for state management.
+- The application provides increment, decrement, and reset functionality for the counter.
+- Validation is implemented to prevent negative counter values.
+- Dynamic theme switching is achieved through conditional styling.
+- Flexbox is used to create a clean and responsive layout.
+- The application demonstrates fundamental React Native concepts including component structure, state management, event handling, and dynamic UI updates.
+- Sample outputs include screen recordings, and the generated release APK.
