@@ -10,7 +10,7 @@ The `main` branch serves as an index and navigation page for the repository. To 
 
 ## Assignment Branches
 
-| Branch | Assignment Title | Technology |
+| Branch | Assignment Topic | Technology |
 |----------|----------|----------|
 | `assignment-01` | Time Complexity Analysis (Constant, Linear & Quadratic) | C |
 | `assignment-02` | Space Complexity Analysis | C |
